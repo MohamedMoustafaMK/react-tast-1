@@ -8,6 +8,7 @@ ul {
 
 .nav button,
 .nav a {
+	font-size: 1.3rem;
 	cursor: pointer;
 	color: #9d9d9d;
 	transition: color 0.3s;
@@ -22,7 +23,7 @@ ul {
 }
 
 .nav ul a.active {
-	color: #212485; 
+	color: #212485;
 }
 
 button:focus {

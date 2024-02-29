@@ -2,6 +2,7 @@ import HomePage from './pages/HomePage'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import GuestNavStack from './navigation/GuestNavStack'
+import './styles/index.css'
 
 function App() {
 	const user = 'guest'

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { languageSelector } from '../services/state/redux/app/appSlice'
 import { useTranslation } from 'react-i18next'
+import Pagination from '../components/shared/Pagination'
 
 const ProductDisplayPage = () => {
 	const [fetchedData, setFetchedData] = useState([])
@@ -32,7 +33,7 @@ const ProductDisplayPage = () => {
 				payload,
 				{ headers, params },
 			)
-			console.log('🚀 ~ fetchData ~ data.values:', data.values)
+			console.log('🚀 ~ fetchData ~ data:', data)
 			setFetchedData(data)
 		} catch (error) {
 			console.log('🚀 ~ fetchData ~ error:', error)
@@ -52,6 +53,10 @@ const ProductDisplayPage = () => {
 				language={language}
 				t={t}
 				isLoading={isLoading}
+			/>
+			<Pagination
+				dataCount={fetchedData.total_compounds}
+				data={fetchedData.values}
 			/>
 		</div>
 	)

@@ -9,9 +9,11 @@ const ProductDisplayList = ({ data, language, t, isLoading }) => {
 			{isLoading ? (
 				<ProductCardSkeleton />
 			) : (
-				<ProductCard data={data} language={language} t={t} />
+				<>
+					<h2>{data.total_compounds}</h2>
+					<ProductCard data={data} language={language} t={t} />
+				</>
 			)}
-			<Pagination />
 		</div>
 	)
 }

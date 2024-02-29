@@ -21,7 +21,6 @@
 	caret-color: #000;
 	color: #1e4164;
 	min-width: 550px;
-	width: auto;
 	height: 55px;
 }
 .search-input:focus {
@@ -56,6 +55,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
+	z-index: 1;
 }
 
 /* dropdown */
@@ -97,6 +97,13 @@
 	flex-direction: column;
 	overflow: auto;
 	white-space: nowrap;
+	z-index: 1;
+}
+.dropdown-btns-list {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	gap: 20px;
 }
 .checkbox-options {
 	display: flex;
@@ -145,5 +152,16 @@
 		transform: rotate(30deg) scaleX(-1);
 		margin-left: 1px;
 		margin-bottom: 2px;
+	}
+}
+@media (max-width: 1450px) {
+	.dropdown-button {
+		/* width: 800px; */
+	}
+	.submit-btn {
+		width: 585px;
+	}
+	.search-box {
+		height: 300px;
 	}
 }

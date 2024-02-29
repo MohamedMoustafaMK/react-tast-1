@@ -15,26 +15,28 @@ const SearchForm = ({ language, t, dropdownItems }) => {
 					language={language}
 					placeholder={t('home-seacrh_card-search_form-placeholder')}
 				/>
-				<Dropdown
-					title={t('search_form-property_type-dropdown')}
-					items={dropdownItems.propertyType}
-					onSelect={handleDropdownSelect}
-					display='text'
-				/>
-				<Dropdown
-					language={language}
-					title={t('search_form-bedrooms-dropdown')}
-					items={dropdownItems.bedrooms}
-					onSelect={handleDropdownSelect}
-					display='nubmer'
-				/>
-				<Dropdown
-					language={language}
-					title={t('search_form-price-dropdown')}
-					items={dropdownItems.price}
-					onSelect={handleDropdownSelect}
-					display='range'
-				/>
+				<div className='dropdown-btns-list'>
+					<Dropdown
+						title={t('search_form-property_type-dropdown')}
+						items={dropdownItems.propertyType}
+						onSelect={handleDropdownSelect}
+						display='text'
+					/>
+					<Dropdown
+						language={language}
+						title={t('search_form-bedrooms-dropdown')}
+						items={dropdownItems.bedrooms}
+						onSelect={handleDropdownSelect}
+						display='nubmer'
+					/>
+					<Dropdown
+						language={language}
+						title={t('search_form-price-dropdown')}
+						items={dropdownItems.price}
+						onSelect={handleDropdownSelect}
+						display='range'
+					/>
+				</div>
 				<SubmitButton
 					title={t('home-search_card-search_form-button_title')}
 				/>

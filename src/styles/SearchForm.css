@@ -3,6 +3,7 @@
 	height: 119px;
 	padding: 0 50px;
 	display: flex;
+  justify-content: center;
 	border-radius: 20px;
 	z-index: 1;
 }
@@ -11,5 +12,20 @@
 	display: flex;
 	align-items: center;
 	gap: 20px;
+}
+
+@media (max-width: 1450px) {
+	.search-form {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: start;
+		gap: 20px;
+    padding: 50px 0;
+	}
+	.search-form-container {
+		height: 400px;
+    width: 600px;
+	}
 }
 

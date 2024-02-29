@@ -1,0 +1,50 @@
+ul {
+	list-style: none;
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	white-space: nowrap;
+}
+
+.nav button,
+.nav a {
+	cursor: pointer;
+	color: #9d9d9d;
+	transition: color 0.3s;
+	background-color: transparent;
+	border: none;
+}
+
+.nav button:hover,
+.nav a:hover {
+	color: #ff5e00;
+	border: none;
+}
+
+.nav ul a.active {
+	color: #212485; 
+}
+
+button:focus {
+	outline: none;
+}
+.nav {
+	display: flex;
+	padding: 0 10rem;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #fff;
+	height: 71px;
+}
+
+.nav-lang {
+	display: flex;
+	gap: 20px;
+}
+
+.logo {
+	width: 102px;
+	height: 25px;
+	padding: 0 0;
+	margin-top: 10px;
+}

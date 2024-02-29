@@ -1,0 +1,15 @@
+.search-form-container {
+	background: #f6f6f6;
+	height: 119px;
+	padding: 0 50px;
+	display: flex;
+	border-radius: 20px;
+	z-index: 1;
+}
+
+.search-form {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+

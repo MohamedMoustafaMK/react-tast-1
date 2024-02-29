@@ -1,0 +1,87 @@
+/* ProductCardSkeleton.css */
+.product-card-skeleton-wrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+	gap: 20px;
+}
+
+.product-card.skeleton {
+	height: 350px;
+	border: 1px solid #bbb;
+	border-radius: 10px;
+	position: relative;
+	margin: 20px 20px;
+	overflow: hidden;
+}
+
+.background-skeleton-container {
+	width: 100%;
+	height: 60%;
+	position: relative;
+	overflow: hidden;
+	background-color: #bbb; /* Placeholder color */
+	animation: skeletonLoading 0.5s infinite alternate; /* Add animation */
+}
+
+.background-skeleton-container::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		to right,
+		rgba(192, 192, 192, 0.5),
+		transparent,
+		rgba(192, 192, 192, 0.5)
+	);
+	animation: overlayLoading 1s infinite alternate;
+}
+
+.card-desc {
+	margin: 10px 20px;
+}
+
+.product-card-title.skeleton,
+.address.skeleton,
+.price-installment.skeleton,
+.property-types.skeleton {
+	background-color: #ddd; /* Placeholder color */
+	height: 20px; /* Adjust height as needed */
+	margin-bottom: 10px;
+}
+
+.product-card-title.skeleton {
+	width: 70%; /* Adjust width as needed */
+}
+
+.address.skeleton {
+	width: 50%; /* Adjust width as needed */
+}
+
+.price-installment.skeleton {
+	width: 30%; /* Adjust width as needed */
+}
+
+.property-types.skeleton {
+	width: 80%; /* Adjust width as needed */
+}
+
+@keyframes skeletonLoading {
+	0% {
+		opacity: 0.8;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes overlayLoading {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(100%);
+	}
+}

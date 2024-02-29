@@ -7,12 +7,14 @@ import { useTranslation } from 'react-i18next'
 
 const ProductDisplayPage = () => {
 	const [fetchedData, setFetchedData] = useState([])
+	const [isLoading, setisLoading] = useState(false)
 	const language = useSelector(languageSelector)
 	const { t } = useTranslation()
 
 	const baseUrl = 'https://webapi.cooingestate.com'
 	const endpoint = '/api/properties/search'
 	const fetchData = async () => {
+		setisLoading(true)
 		try {
 			const params = {
 				token: undefined,
@@ -34,6 +36,8 @@ const ProductDisplayPage = () => {
 			setFetchedData(data)
 		} catch (error) {
 			console.log('🚀 ~ fetchData ~ error:', error)
+		} finally {
+			setisLoading(false)
 		}
 	}
 
@@ -43,7 +47,12 @@ const ProductDisplayPage = () => {
 
 	return (
 		<div>
-			<ProductDisplayList data={fetchedData} language={language} t={t} />
+			<ProductDisplayList
+				data={fetchedData}
+				language={language}
+				t={t}
+				isLoading={isLoading}
+			/>
 		</div>
 	)
 }

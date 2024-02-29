@@ -1,7 +1,8 @@
 .product-card-container {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-	gap: 20px;
+	margin: 0 40px;
+	grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  justify-content: center;
 }
 /* @media (max-width: 750px) {
 	.product-card-container {
@@ -9,7 +10,7 @@
 	}
 } */
 .product-card {
-	height: 420px;
+	height: 350px;
 	border: 1px solid #bbb;
 	border-radius: 10px;
 	position: relative;
@@ -37,15 +38,14 @@
 	position: absolute;
 	width: 50px;
 	height: 50px;
-	top: 180px;
+	top: 150px;
 	left: 20px;
 	border-radius: 50%;
 }
 .image-btns {
 	position: absolute;
 	top: 0;
-	/* right: 0; */
-	color: red;
+	color: #fff;
 	margin-top: 20px;
 	display: flex;
 	justify-content: end;
@@ -53,18 +53,21 @@
 	gap: 10px;
 }
 .image-btn {
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 0, 0.7);
 	border-radius: 50%;
-	width: 40px;
-	height: 40px;
+	width: 35px;
+	height: 35px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	cursor: pointer;
+	z-index: 1;
 }
 .card-desc {
 	margin: 10px 20px;
 }
 .prduct-card-title {
+	margin-top: 35px;
 	font-size: larger;
 	font-weight: 500;
 }
@@ -96,12 +99,32 @@
 	gap: 10px;
 }
 .contact-btn {
-	width: 55px;
-	height: 55px;
+	width: 40px;
+	height: 40px;
+	margin-bottom: 10px;
 	border-radius: 50%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: rgba(0, 0, 0, 0.8);
-	color: red;
+	cursor: pointer;
+	z-index: 1;
+}
+.whatsap {
+	background-color: #4cd964;
+	color: #fff;
+}
+
+.phone {
+	background-color: #e4ebf2;
+	color: #1e4164;
+}
+
+.card-clickable {
+	background-color: transparent;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 370px;
+	cursor: pointer;
+	width: 100%;
 }

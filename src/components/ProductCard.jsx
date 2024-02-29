@@ -1,6 +1,10 @@
 import '../styles/ProductCard.css'
 import { Fragment } from 'react'
 import { formatNumberWithCommas } from '../util/formatting'
+import { RiShareBoxFill } from 'react-icons/ri'
+import { FaRegHeart, FaWhatsapp } from 'react-icons/fa'
+import { BsHouses } from 'react-icons/bs'
+import { FaPhone } from 'react-icons/fa6'
 
 const ProductCard = ({ data, language, t }) => {
 	return (
@@ -21,9 +25,24 @@ const ProductCard = ({ data, language, t }) => {
 							alt='logo'
 						></img>
 						<div className='image-btns'>
-							<div className='image-btn'>1</div>
-							<div className='image-btn'>2</div>
-							<div className='image-btn'>3</div>
+							<div
+								className='image-btn'
+								onClick={() => console.log('House')}
+							>
+								<BsHouses size={20} />
+							</div>
+							<div
+								className='image-btn'
+								onClick={() => console.log('Share')}
+							>
+								<RiShareBoxFill size={20} />
+							</div>
+							<div
+								className='image-btn'
+								onClick={() => console.log('Fav')}
+							>
+								<FaRegHeart size={20} />
+							</div>
 						</div>
 						<div className='card-desc'>
 							<div className='prduct-card-title'>{item.name}</div>
@@ -57,9 +76,23 @@ const ProductCard = ({ data, language, t }) => {
 							</div>
 						</div>
 						<div className='product-card-contact-btns'>
-							<div className='contact-btn'>4</div>
-							<div className='contact-btn'>5</div>
+							<div
+								className='contact-btn phone'
+								onClick={() => console.log('phone')}
+							>
+								<FaPhone size={20} />
+							</div>
+							<div
+								className='contact-btn whatsap'
+								onClick={() => console.log('whatsap')}
+							>
+								<FaWhatsapp size={30} />
+							</div>
 						</div>
+						<div
+							className='card-clickable'
+							onClick={() => console.log('card')}
+						></div>
 					</div>
 				))}
 		</div>

@@ -10,3 +10,34 @@ export const formatNumberWithCommas = (number) => {
 		return numString
 	}
 }
+
+export const extractDropdownOptionsInfo = (
+	dataObject,
+	language,
+	getValues = false,
+) => {
+	if (dataObject) {
+		const allInfo = []
+
+		for (const key in dataObject) {
+			if (dataObject.hasOwnProperty(key)) {
+				const translation =
+					language === 'ar' ? dataObject[key].ar : dataObject[key].en
+				const info = getValues ? dataObject[key].value : translation
+				allInfo.push(
+					info !== undefined
+						? info
+						: `Information not available for ${
+								language === 'ar'
+									? dataObject[key].ar
+									: dataObject[key].en
+							}.`,
+				)
+			}
+		}
+
+		return allInfo
+	} else {
+		return [`Data object not found.`]
+	}
+}

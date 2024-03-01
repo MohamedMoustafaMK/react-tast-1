@@ -2,6 +2,7 @@ import SubmitButton from './shared/SubmitButton'
 import '../styles/SearchForm.css'
 import SearchInput from './shared/SearchInput'
 import Dropdown from './shared/Dropdown'
+import { extractDropdownOptionsInfo } from '../util/formatting'
 
 const SearchForm = ({ language, t, dropdownItems }) => {
 	const handleDropdownSelect = (selectedItems) => {
@@ -18,21 +19,30 @@ const SearchForm = ({ language, t, dropdownItems }) => {
 				<div className='dropdown-btns-list'>
 					<Dropdown
 						title={t('search_form-property_type-dropdown')}
-						items={dropdownItems.propertyType}
+						items={extractDropdownOptionsInfo(
+							dropdownItems.propertyType,
+							language,
+						)}
 						onSelect={handleDropdownSelect}
 						display='text'
 					/>
 					<Dropdown
 						language={language}
 						title={t('search_form-bedrooms-dropdown')}
-						items={dropdownItems.bedrooms}
+						items={extractDropdownOptionsInfo(
+							dropdownItems.bedrooms,
+							language,
+						)}
 						onSelect={handleDropdownSelect}
-						display='nubmer'
+						display='number'
 					/>
 					<Dropdown
 						language={language}
 						title={t('search_form-price-dropdown')}
-						items={dropdownItems.price}
+						items={extractDropdownOptionsInfo(
+							dropdownItems.price,
+							language,
+						)}
 						onSelect={handleDropdownSelect}
 						display='range'
 					/>

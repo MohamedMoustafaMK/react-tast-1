@@ -11,11 +11,12 @@ const Dropdown = ({ items, title, display, language }) => {
 	const handleButtonClick = () => {
 		setIsOpen(!isOpen)
 	}
-	const handleSelectingItem = (key) => {
+
+	const handleSelectingItem = (item) => {
 		setSelectedItems(
-			selectedItems.includes(key)
-				? selectedItems.filter((item) => item !== key)
-				: [...selectedItems, key],
+			selectedItems.includes(item)
+				? selectedItems.filter((selectedItem) => selectedItem !== item)
+				: [...selectedItems, item],
 		)
 	}
 
@@ -45,15 +46,15 @@ const Dropdown = ({ items, title, display, language }) => {
 
 	const renderDropdownList = () => (
 		<div className='dropdown-list'>
-			{Object.entries(items).map(([key, value]) => (
-				<div className='checkbox-options' key={key}>
+			{items.map((item, index) => (
+				<div className='checkbox-options' key={index}>
 					<input
 						type='checkbox'
-						id={key}
-						onChange={() => handleSelectingItem(key)}
-						checked={selectedItems.includes(key)}
+						id={index}
+						onChange={() => handleSelectingItem(item)}
+						checked={selectedItems.includes(item)}
 					/>
-					<label htmlFor={key}>{key}</label>
+					<label htmlFor={index}>{item}</label>
 				</div>
 			))}
 		</div>
@@ -88,18 +89,14 @@ const Dropdown = ({ items, title, display, language }) => {
 
 Dropdown.defaultProps = {
 	title: 'Select Options',
-	items: {
-		Option1: 'Label 1',
-		Option2: 'Label 2',
-		Option3: 'Label 3',
-	},
+	items: ['Label 1', 'Label 2', 'Label 3'],
 	language: 'en',
-	dispay: 'text',
+	display: 'text',
 }
 
 Dropdown.propTypes = {
 	title: PropTypes.string,
-	items: PropTypes.object,
+	items: PropTypes.arrayOf(PropTypes.string),
 	display: PropTypes.string,
 }
 

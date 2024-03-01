@@ -121,17 +121,11 @@
 	color: #000;
 }
 .checkbox-options input[type='checkbox'] {
-	/* Hide the default checkbox appearance */
 	appearance: none;
-	/* Provide a larger area for clicking */
 	min-width: 20px;
 	min-height: 20px;
-
-	/* Set a border for visibility */
 	border: 2px solid #ccc;
 	border-radius: 5px;
-
-	/* Center the content within the checkbox */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -139,8 +133,6 @@
 .checkbox-options input[type='checkbox']:checked {
 	border: 1px solid #165688;
 	background-color: #e6f0f4;
-}
-.checkbox-options input[type='checkbox']:checked {
 	&::after {
 		content: '';
 		display: inline-block;
@@ -154,6 +146,7 @@
 		margin-bottom: 2px;
 	}
 }
+
 @media (max-width: 1450px) {
 	.submit-btn {
 		width: 585px;

@@ -4,6 +4,8 @@ import { NavLink, useLocation } from 'react-router-dom'
 import '../../styles/Navbar.css'
 import logo from '../../assets/nawy.svg'
 import { useDispatch, useSelector } from 'react-redux'
+import { FaRegHeart } from 'react-icons/fa'
+
 import {
 	languageSelector,
 	setLanguage,
@@ -58,7 +60,8 @@ const Navbar = () => {
 					<NavLink to='/careers'>{t('nav_bar_careers')}</NavLink>
 				</li>
 			</ul>
-			<div className='nav-lang'>
+			<div className='nav-lang-container'>
+				<FaRegHeart size={25} />
 				<button type='button' onClick={toggleLanguage}>
 					{language === 'en' ? 'العربية' : 'English'}
 				</button>

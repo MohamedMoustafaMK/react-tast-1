@@ -1,7 +1,7 @@
 ul {
 	list-style: none;
 	display: flex;
-	gap: 20px;
+	gap: 40px;
 	justify-content: center;
 	white-space: nowrap;
 }
@@ -38,9 +38,9 @@ button:focus {
 	height: 71px;
 }
 
-.nav-lang {
+.nav-lang-container {
 	display: flex;
-	gap: 20px;
+	align-items: center;
 }
 
 .logo {
@@ -48,4 +48,14 @@ button:focus {
 	height: 25px;
 	padding: 0 0;
 	margin-top: 10px;
+}
+@media (max-width: 1425px) {
+	.nav-lang-container,
+	.nav ul {
+		display: none;
+	}
+	.nav {
+		display: flex;
+		justify-content: start;
+	}
 }

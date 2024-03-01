@@ -11,10 +11,9 @@ export const formatNumberWithCommas = (number) => {
 	}
 }
 
-export const extractDropdownOptionsInfo = (
+export const extractOptionsTrans = (
 	dataObject,
 	language,
-	getValues = false,
 ) => {
 	if (dataObject) {
 		const allInfo = []
@@ -23,11 +22,10 @@ export const extractDropdownOptionsInfo = (
 			if (dataObject.hasOwnProperty(key)) {
 				const translation =
 					language === 'ar' ? dataObject[key].ar : dataObject[key].en
-				const info = getValues ? dataObject[key].value : translation
 				allInfo.push(
-					info !== undefined
-						? info
-						: `Information not available for ${
+					translation !== undefined
+						? translation
+						: `translation not available for ${
 								language === 'ar'
 									? dataObject[key].ar
 									: dataObject[key].en

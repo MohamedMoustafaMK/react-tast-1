@@ -6,7 +6,7 @@ import { languageSelector } from '../services/state/redux/app/appSlice'
 import { useTranslation } from 'react-i18next'
 import Pagination from '../components/shared/Pagination'
 
-const ProductDisplayPage = () => {
+const ProductListingPage = () => {
 	const [fetchedData, setFetchedData] = useState([])
 	const [isLoading, setisLoading] = useState(false)
 	const language = useSelector(languageSelector)
@@ -62,4 +62,4 @@ const ProductDisplayPage = () => {
 	)
 }
 
-export default ProductDisplayPage
+export default ProductListingPage

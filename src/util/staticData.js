@@ -8,7 +8,7 @@ const staticData = {
 		},
 		villa: {
 			ar: 'فيلا',
-			en: 'Villa',
+			en: 'Vil  la',
 			value: 1,
 		},
 		twinhouse: {

@@ -1,19 +1,11 @@
 import { useState } from 'react'
-import '../styles/PDPCarousel.css'
+import '../styles/ProductDetailsPage.css'
 
-const PDPCarousel = () => {
+const PDPCarousel = ({data}) => {
 	const [isHovered, setIsHovered] = useState(null)
 	const [isMain, setIsMain] = useState(true)
 
-	const data = [
-		'https://via.placeholder.com/800x600/FF5733/FFFFFF?text=1',
-		'https://via.placeholder.com/800x600/33FF57/FFFFFF?text=2',
-		'https://via.placeholder.com/800x600/5733FF/FFFFFF?text=3',
-		'https://via.placeholder.com/800x600/FF3366/FFFFFF?text=4',
-		'https://via.placeholder.com/800x600/33A1FF/FFFFFF?text=5',
-		'https://via.placeholder.com/800x600/FF33A1/FFFFFF?text=6',
-	]
-
+	
 	const handleHover = (index, isMain) => {
 		setIsHovered(index)
 		setIsMain(isMain)
@@ -49,12 +41,8 @@ const PDPCarousel = () => {
 						/>
 					</div>
 				))}
-				<div className='carousel-img-folded-container'>
-					<img
-						className='carousel-img'
-						src='https://via.placeholder.com/800x600/AA11A1/FFFFFF?text=7'
-						alt='img'
-					/>
+				<div className='carousel-img-static-container'>
+					<img className='static-img' src={data[6]} alt='img' />
 				</div>
 			</div>
 		</div>

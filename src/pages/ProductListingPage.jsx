@@ -47,7 +47,7 @@ const ProductListingPage = () => {
 	}, [language])
 
 	return (
-		<div>
+		<div className='page-container'>
 			<ProductDisplayList
 				data={fetchedData}
 				language={language}

@@ -42,12 +42,12 @@ button {
 	cursor: pointer;
 	/* transition: border-color 0.25s; */
 }
-.container {
-	/* margin: 10px auto;
+.page-container {
+	width: 80%;
 	display: flex;
 	justify-content: center;
-	height: 100vh;
-	width: 100%; */
+	flex-direction: column;
+	margin: auto;
 }
 
 .dummyDiv {

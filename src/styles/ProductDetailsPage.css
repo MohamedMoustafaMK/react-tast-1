@@ -1,11 +1,10 @@
 .card-container {
 	display: flex;
-	align-items: center;
 	justify-content: center;
 }
 .carousel {
 	height: 620px;
-	width: 80%;
+	/* width: 80%; */
 	border-radius: 10px;
 	display: flex;
 	gap: 10px;
@@ -14,27 +13,35 @@
 
 .carousel-img-main-container {
 	width: 50%;
-	height: inherit;
+	height: 100%;
 	background: green;
+	transition: all 1s ease;
 	overflow: hidden;
+	/* transition: all 1s ease; */
 }
 .carousel-img-folded-container {
 	width: 10%;
 	height: inherit;
 	background-color: pink;
-  overflow: hidden;
+	overflow: hidden;
+	transition: all 1s ease;
+	cursor: pointer;
 }
-
+.carousel-img-static-container {
+	width: 5%;
+	height: 100%;
+}
 .carousel-img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-  object-position: center center;
+	object-position: center center;
 	display: block;
+	cursor: pointer;
 }
-
-
-.carousel-img-main-container,
-.carousel-img-folded-container {
-  transition: all 1s ease;
+.static-img {
+	height: 100%;
+	background-size: contain;
+	background-position: center center;
+	cursor: pointer;
 }

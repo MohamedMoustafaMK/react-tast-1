@@ -1,20 +1,28 @@
 import PDPCardRibbon from '../components/PDPCardRibbon'
 import PDPCarousel from '../components/PDPCarousel'
+import NavigationRibbon from '../components/NavigationRibbon'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 
 const ProductDetailsPage = () => {
-	const data = [
-		'https://via.placeholder.com/800x600/FF5733/FFFFFF?text=1',
-		'https://via.placeholder.com/800x600/33FF57/FFFFFF?text=2',
-		'https://via.placeholder.com/800x600/5733FF/FFFFFF?text=3',
-		'https://via.placeholder.com/800x600/FF3366/FFFFFF?text=4',
-		'https://via.placeholder.com/800x600/33A1FF/FFFFFF?text=5',
-		'https://via.placeholder.com/800x600/FF33A1/FFFFFF?text=6',
-		'https://via.placeholder.com/800x600/AA11A1/FFFFFF?text=7',
-	]
-
+	const [fetchedData, setFetchedData] = useState({})
+	const baseUrl = 'https://webapi.cooingestate.com/api/compounds/'
+	//data.cover-image-path
+	//data.compound_images.image-path
+	const fetchData = async (compound_id) => {
+		const { data } = await axios.get(
+			`${baseUrl}${compound_id}?token=undefined&language=en`,
+		)
+		console.log(data)
+		setFetchedData(data)
+	}
+	useEffect(() => {
+		fetchData(202)
+	}, [])
 	return (
 		<div className='page-container'>
-			<PDPCarousel data={data} />
+			<NavigationRibbon />
+			{fetchData && <PDPCarousel data={fetchedData} />}
 			<PDPCardRibbon />
 		</div>
 	)

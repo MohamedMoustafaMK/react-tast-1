@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import '../styles/ProductDetailsPage.css'
 
-const PDPCarousel = ({data}) => {
+const PDPCarousel = ({ data }) => {
 	const [isHovered, setIsHovered] = useState(null)
 	const [isMain, setIsMain] = useState(true)
 
-	
 	const handleHover = (index, isMain) => {
 		setIsHovered(index)
 		setIsMain(isMain)
@@ -21,28 +20,42 @@ const PDPCarousel = ({data}) => {
 							: 'carousel-img-folded-container'
 					}`}
 				>
-					<img className='carousel-img' src={data[0]} alt='img' />
-				</div>
-				{data.slice(1, 6).map((imgSrc, index) => (
-					<div
-						key={index}
-						className={`carousel-img-container ${
-							isHovered === index + 1
-								? 'carousel-img-main-container'
-								: 'carousel-img-folded-container'
-						}`}
-						onMouseEnter={() => handleHover(index + 1, false)}
-						onMouseLeave={() => handleHover(null, true)}
-					>
+					{data.cover_image_path && (
 						<img
 							className='carousel-img'
-							src={imgSrc}
-							alt={`img-${index + 1}`}
+							src={data.cover_image_path}
+							alt='img'
 						/>
-					</div>
-				))}
+					)}
+				</div>
+				{data.compound_images &&
+					data.compound_images.length > 6 &&
+					data.compound_images.slice(1, 7).map((imgSrc, index) => (
+						<div
+							key={index}
+							className={`carousel-img-container ${
+								isHovered === index + 1
+									? 'carousel-img-main-container'
+									: 'carousel-img-folded-container'
+							}`}
+							onMouseEnter={() => handleHover(index + 1, false)}
+							onMouseLeave={() => handleHover(null, true)}
+						>
+							<img
+								className='carousel-img'
+								src={imgSrc.image_path}
+								alt={`img-${index + 1}`}
+							/>
+						</div>
+					))}
 				<div className='carousel-img-static-container'>
-					<img className='static-img' src={data[6]} alt='img' />
+					{data.compound_images && (
+						<img
+							className='static-img'
+							src={data.compound_images[7].image_path}
+							alt={`img`}
+						/>
+					)}
 				</div>
 			</div>
 		</div>

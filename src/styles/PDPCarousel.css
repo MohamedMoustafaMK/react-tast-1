@@ -32,3 +32,9 @@
   object-position: center center;
 	display: block;
 }
+
+
+.carousel-img-main-container,
+.carousel-img-folded-container {
+  transition: all 1s ease;
+}

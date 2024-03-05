@@ -1,0 +1,34 @@
+.card-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.carousel {
+	height: 620px;
+	width: 80%;
+	border-radius: 10px;
+	display: flex;
+	gap: 10px;
+	overflow: hidden;
+}
+
+.carousel-img-main-container {
+	width: 50%;
+	height: inherit;
+	background: green;
+	overflow: hidden;
+}
+.carousel-img-folded-container {
+	width: 10%;
+	height: inherit;
+	background-color: pink;
+  overflow: hidden;
+}
+
+.carousel-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+  object-position: center center;
+	display: block;
+}

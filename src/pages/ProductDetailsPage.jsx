@@ -1,7 +1,11 @@
-const ProductDetailsPage = () => {
-  return (
-    <div>ProductDetailsPage</div>
-  );
-};
+import PDPCarousel from '../components/PDPCarousel'
 
-export default ProductDetailsPage;
+const ProductDetailsPage = () => {
+	return (
+		<div>
+			<PDPCarousel />
+		</div>
+	)
+}
+
+export default ProductDetailsPage

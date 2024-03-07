@@ -5,8 +5,15 @@ import { RiShareBoxFill } from 'react-icons/ri'
 import { FaRegHeart, FaWhatsapp } from 'react-icons/fa'
 import { BsHouses } from 'react-icons/bs'
 import { FaPhone } from 'react-icons/fa6'
+import { useNavigate } from 'react-router-dom'
 
 const ProductCard = ({ data, language, t }) => {
+  const navigate = useNavigate()
+	const handleCardClick = (compoundId) => {
+		console.log(compoundId)
+    navigate(`/compound/${compoundId}`)
+
+	}
 	return (
 		<div className='product-card-container'>
 			{data.values.length > 0 &&
@@ -91,7 +98,7 @@ const ProductCard = ({ data, language, t }) => {
 						</div>
 						<div
 							className='card-clickable'
-							onClick={() => console.log('card')}
+							onClick={() => handleCardClick(item.id)}
 						></div>
 					</div>
 				))}

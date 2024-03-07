@@ -4,7 +4,6 @@ import { FaArrowLeft } from 'react-icons/fa'
 import { FaArrowRight } from 'react-icons/fa'
 import '../styles/ProductDetailsPage.css'
 import { Img } from 'react-image'
-import LazyLoad from 'react-lazyload'
 import Spinner from './shared/Spinner'
 
 const YourComponent = ({ data, language }) => {
@@ -50,14 +49,12 @@ const YourComponent = ({ data, language }) => {
 					</div>
 					{data && data.length > 0 && (
 						<div className='modal-content-container'>
-							<LazyLoad height={200} offset={100}>
-								<Img
-									className='modal-img'
-									src={data[imgIndex].image_path}
-									alt='Description of the image'
-									loader={<Spinner />}
-								/>
-							</LazyLoad>
+							<Img
+								className='modal-img'
+								src={data[imgIndex].image_path}
+								alt='Description of the image'
+								loader={<Spinner />}
+							/>
 							<div className='overlay-gallery-btns'>
 								<div
 									className='gallery-btn'

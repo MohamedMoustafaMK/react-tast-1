@@ -9,7 +9,7 @@ const GuestNavStack = () => {
 		<Routes>
 			<Route exact path='/' element={<HomePage />} />
 			<Route exact path='/search/*' element={<ProductListingPage />} />
-			<Route exact path='/compound/*' element={<ProductDetailsPage />} />
+			<Route exact path='/compound/:compoundId' element={<ProductDetailsPage />} />
 			<Route path='/*' element={<NotFoundPage />} />
 		</Routes>
 	)

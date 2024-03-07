@@ -6,6 +6,8 @@ import { FaRegHeart, FaWhatsapp } from 'react-icons/fa'
 import { BsHouses } from 'react-icons/bs'
 import { FaPhone } from 'react-icons/fa6'
 import { useNavigate } from 'react-router-dom'
+import { Img } from 'react-image'
+import Spinner from './shared/Spinner'
 
 const ProductCard = ({ data, language, t }) => {
   const navigate = useNavigate()
@@ -20,17 +22,19 @@ const ProductCard = ({ data, language, t }) => {
 				data.values.map((item, index) => (
 					<div className='product-card' key={index}>
 						<div className='background-image-container'>
-							<img
+							<Img
 								className='product-card-image'
 								src={item.image}
 								alt='image'
+								loader={<Spinner />}
 							/>
 						</div>
-						<img
+						<Img
 							className='product-card-logo'
 							src={item.developer.logo_path}
 							alt='logo'
-						></img>
+							loader={<Spinner />}
+						/>
 						<div className='image-btns'>
 							<div
 								className='image-btn'

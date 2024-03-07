@@ -10,6 +10,8 @@ import {
 	languageSelector,
 	setLanguage,
 } from '../../services/state/redux/app/appSlice'
+import { Img } from 'react-image'
+import Spinner from '../shared/Spinner'
 
 const Navbar = () => {
 	const { t, i18n } = useTranslation()
@@ -26,7 +28,12 @@ const Navbar = () => {
 	return (
 		<nav className='nav'>
 			<NavLink to='/'>
-				<img className='logo' src={logo} alt='Nawy Logo' />
+				<Img
+					className='logo'
+					src={logo}
+					alt='Nawy Logo'
+					loader={<Spinner />}
+				/>
 			</NavLink>
 			<ul>
 				<li className={location.pathname === '/' ? 'active' : ''}>

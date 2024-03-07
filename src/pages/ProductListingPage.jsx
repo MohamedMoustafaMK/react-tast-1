@@ -54,10 +54,10 @@ const ProductListingPage = () => {
 				t={t}
 				isLoading={isLoading}
 			/>
-			<Pagination
+			{/* <Pagination
 				dataCount={fetchedData.total_compounds}
 				data={fetchedData.values}
-			/>
+			/> */}
 		</div>
 	)
 }

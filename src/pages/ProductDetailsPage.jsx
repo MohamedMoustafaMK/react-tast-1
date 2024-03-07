@@ -12,7 +12,7 @@ const ProductDetailsPage = () => {
 	const baseUrl = 'https://webapi.cooingestate.com/api/compounds/'
 	//data.cover-image-path
 	//data.compound_images.image_path
-	const fetchData = async (compound_id) => {
+	const fetchData = async () => {
 		const { data } = await axios.get(
 			`${baseUrl}${compoundId}?token=undefined&language=en`,
 		)
@@ -21,7 +21,7 @@ const ProductDetailsPage = () => {
 	}
 	useEffect(() => {
 		fetchData()
-	}, [])
+	}, [compoundId])
 	return (
 		<div className='page-container'>
 			<NavigationRibbon />

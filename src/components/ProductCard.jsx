@@ -10,11 +10,10 @@ import { Img } from 'react-image'
 import Spinner from './shared/Spinner'
 
 const ProductCard = ({ data, language, t }) => {
-  const navigate = useNavigate()
+	const navigate = useNavigate()
 	const handleCardClick = (compoundId) => {
 		console.log(compoundId)
-    navigate(`/compound/${compoundId}`)
-
+		navigate(`/compound/${compoundId}`)
 	}
 	return (
 		<div className='product-card-container'>
@@ -58,7 +57,7 @@ const ProductCard = ({ data, language, t }) => {
 						<div className='card-desc'>
 							<div className='prduct-card-title'>{item.name}</div>
 							<div className='address'>
-								{`${item.area.name}, ${t('pdp_product-card-eg')}`}
+								{`${item.area.name}, ${t('app_eg')}`}
 							</div>
 							{item.property_types && (
 								<div className='property-types'>

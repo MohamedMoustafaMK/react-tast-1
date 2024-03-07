@@ -5,29 +5,50 @@ import GalleryModal from '../components/GalleryModal'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next'
+import { languageSelector } from '../services/state/redux/app/appSlice'
 
 const ProductDetailsPage = () => {
-	const [fetchedData, setFetchedData] = useState({})
+	const [fetchedData, setFetchedData] = useState()
 	const { compoundId } = useParams()
+	const language = useSelector(languageSelector)
+	const { t } = useTranslation()
 	const baseUrl = 'https://webapi.cooingestate.com/api/compounds/'
 	//data.cover-image-path
 	//data.compound_images.image_path
 	const fetchData = async () => {
-		const { data } = await axios.get(
-			`${baseUrl}${compoundId}?token=undefined&language=en`,
-		)
-		console.log(data)
-		setFetchedData(data)
+		try {
+			const { data } = await axios.get(
+				`${baseUrl}${compoundId}?token=undefined&language=${language}`,
+			)
+			console.log(data)
+			setFetchedData(data)
+		} catch (error) {
+			console.log('🚀 ~ fetchData ~ error:', error)
+		}
 	}
+
 	useEffect(() => {
 		fetchData()
-	}, [compoundId])
+	}, [compoundId, language])
+
 	return (
 		<div className='page-container'>
 			<NavigationRibbon />
-			{fetchedData && <PDPCarousel data={fetchedData} />}
-			<PDPCardRibbon />
-			{fetchedData && <GalleryModal data={fetchedData.compound_images} />}
+			{fetchedData && (
+				<PDPCarousel data={fetchedData} language={language} t={t} />
+			)}
+			{fetchedData && (
+				<PDPCardRibbon data={fetchedData} language={language} t={t} />
+			)}
+			{fetchedData && (
+				<GalleryModal
+					data={fetchedData.compound_images}
+					language={language}
+					t={t}
+				/>
+			)}
 		</div>
 	)
 }

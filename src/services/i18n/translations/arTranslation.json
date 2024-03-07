@@ -50,8 +50,10 @@
 	"footer-developer-Jdar_Development": "جدار للتطوير العقاري",
 	"footer-developer-AMG_Ava_Mina_Group": "AMG (مجموعة أفا مينا)",
 	"footer-developer-Tabarak_Developments": "تبراك للتطوير العقاري",
-	"pdp_product-card-eg": "مصر",
 	"pdp_product-card-more": "اخرى",
 	"pdp_product-card-down_payment": "مقدم",
-	"pdp_product-card-years": "سنوات"
+	"pdp_product-card-years": "سنوات",
+	"app_eg": "مصر",
+	"app_in": "في",
+	"app_by": "من"
 }

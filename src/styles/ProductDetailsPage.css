@@ -14,14 +14,14 @@
 .carousel-img-main-container {
 	width: 50%;
 	height: 100%;
-	background: green;
+	background: #f6f6f6;
 	transition: all 1s ease;
 	overflow: hidden;
 }
 .carousel-img-folded-container {
 	width: 10%;
 	height: inherit;
-	background-color: pink;
+	background-color: #f6f6f6;
 	overflow: hidden;
 	transition: all 1s ease;
 	cursor: pointer;
@@ -130,4 +130,24 @@
 	align-items: center;
 	color: #fff;
 	cursor: pointer;
+}
+.card-ribbon {
+	display: flex;
+  justify-content: start;
+	align-items: center;
+	gap: 50px;
+	padding: 30px;
+}
+
+.card-ribbon-logo {
+	top: 50%;
+	left: 0;
+	width: 75px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	box-shadow: 0 0 0 10px #f8f8f8;
+	cursor: pointer;
+}
+.card-ribbon-logo:hover {
+	box-shadow: 0 0 0 10px#e6e6e6;
 }

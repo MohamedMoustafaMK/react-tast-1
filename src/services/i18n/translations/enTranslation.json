@@ -50,8 +50,10 @@
 	"footer-developer-Jdar_Development": "Jdar Development",
 	"footer-developer-AMG_Ava_Mina_Group": "AMG (Ava Mina Group)",
 	"footer-developer-Tabarak_Developments": "Tabarak Developments",
-	"pdp_product-card-eg": "Egypt",
 	"pdp_product-card-more": "More",
 	"pdp_product-card-down_payment": "Down Payment",
-	"pdp_product-card-years": "Years"
+	"pdp_product-card-years": "Years",
+	"app_eg": "Egypt",
+	"app_in": "in",
+	"app_by": "by"
 }

@@ -133,7 +133,7 @@
 }
 .card-ribbon {
 	display: flex;
-  justify-content: start;
+	justify-content: start;
 	align-items: center;
 	gap: 50px;
 	padding: 30px;
@@ -150,4 +150,14 @@
 }
 .card-ribbon-logo:hover {
 	box-shadow: 0 0 0 10px#e6e6e6;
+}
+
+.ribbon-title {
+	font-size: 1.8rem;
+	font-weight: bolder;
+	word-spacing: -4px;
+	color: #1e4164;
+}
+.loader-container {
+	height: 100vh;
 }

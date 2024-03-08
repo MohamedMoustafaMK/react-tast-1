@@ -8,9 +8,11 @@ import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import { languageSelector } from '../services/state/redux/app/appSlice'
+import Spinner from '../components/shared/Spinner'
 
 const ProductDetailsPage = () => {
 	const [fetchedData, setFetchedData] = useState()
+	const [loader, setLoader] = useState(true)
 	const { compoundId } = useParams()
 	const language = useSelector(languageSelector)
 	const { t } = useTranslation()
@@ -26,6 +28,8 @@ const ProductDetailsPage = () => {
 			setFetchedData(data)
 		} catch (error) {
 			console.log('🚀 ~ fetchData ~ error:', error)
+		} finally {
+			setLoader(false)
 		}
 	}
 
@@ -35,19 +39,35 @@ const ProductDetailsPage = () => {
 
 	return (
 		<div className='page-container'>
-			<NavigationRibbon />
-			{fetchedData && (
-				<PDPCarousel data={fetchedData} language={language} t={t} />
-			)}
-			{fetchedData && (
-				<PDPCardRibbon data={fetchedData} language={language} t={t} />
-			)}
-			{fetchedData && (
-				<GalleryModal
-					data={fetchedData.compound_images}
-					language={language}
-					t={t}
-				/>
+			{!loader ? (
+				<>
+					<NavigationRibbon />
+					{fetchedData && (
+						<PDPCarousel
+							data={fetchedData}
+							language={language}
+							t={t}
+						/>
+					)}
+					{fetchedData && (
+						<PDPCardRibbon
+							data={fetchedData}
+							language={language}
+							t={t}
+						/>
+					)}
+					{fetchedData && (
+						<GalleryModal
+							data={fetchedData.compound_images}
+							language={language}
+							t={t}
+						/>
+					)}
+				</>
+			) : (
+				<div className='loader-container'>
+					<Spinner />
+				</div>
 			)}
 		</div>
 	)
